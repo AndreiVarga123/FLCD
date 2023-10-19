@@ -1,6 +1,6 @@
 Type = "int" | "char" 
 
-Program = "#" cmpdstmt ";" "#"
+Program = "#" cmpdstmt ";" "#" //; doesn't serve a purpose
 cmpdstmt = statement | statement cmpdstmt
 statement = declarationStmt | declarationArray | assignment | ifStmt | CascadeStmt | shotsStmt
 declarationStmt = Type declarationList
@@ -11,7 +11,7 @@ expression = integerExpr | StringExpr
 integerExpr = validnum | validstring | integerExpr ("+"|"-"|"*"|"/"|"%") integerExpr
 StringExpr = validstring | Sentence
 ifStmt =  "if (" conditional ")" "<" {cmpdstmt} ">" ["else" "<" cmpdstmt ">"]
-conditional = expression ("EQ"|"LT"|"LE"|"GT"|"Ge"|"NE") expression
+conditional = expression ("EQ"|"LT"|"LE"|"GT"|"Ge"|"NE") expression //could add relational operators
 cascadeStmt =  "cascade (" conditional ")" "<" {cmpdstmt} ">" 
 shotsStmt = "shots" "(" ["int"] assignment conditional ";" ValidString "=" integerExpr ")<" cmpdstmt ">" 
  
