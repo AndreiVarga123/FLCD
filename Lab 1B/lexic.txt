@@ -5,7 +5,7 @@ digit ::= "0" | "1" | ... |"9"
 nozerodigit ::=  "1" | "2" | ... |"9"
 sign ::= "+" | "-"
 validnum ::=  [sign] nozerodigit {digit} | "0"
-validstring ::= letter | letter {letter | digit}
+validstring ::= letter | letter {letter | digit} //server the same purpose as identifier, can be dropped
 sentence ::= """{letter|digit|" "}"""
 operators ::= + - * / = % LT LE GT GE EQ NE 
 separators ::= [] {} < > :; space
